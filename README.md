@@ -1,27 +1,75 @@
-# PdbeKbPingComponent
+PDBe-KB Ping Component
+=
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This is the repository of a lightweight Angular 7+ web component that makes GET requests to specified URLs. 
 
-## Development server
+This component is used on the PDBe-KB Aggregated Views of Proteins to generate web traffic for PDBe-KB partner resources who have contributed annotations for a particular protein of interest.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Quick Start
 
-## Code scaffolding
+Get the code and install dependencies
+```
+git clone https://github.com/PDBe-KB/pdbe-kb-ping-component.git
+cd pdbe-kb-ping-component
+npm i
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Running the app
+```
+ng serve
+```
 
-## Build
+Running tests
+```
+ng test
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Basic usage
 
-## Running unit tests
+The pinging component can be added to any Angular7+ apps.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Import the component (e.g. in app.module.ts):
+```
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-## Running end-to-end tests
+import { AppComponent } from './app.component';
+import { PingComponent } from './ping/ping.component';
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+@NgModule({
+  declarations: [
+    AppComponent,
+    PingComponent
+  ],
+  imports: [
+    BrowserModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Further help
+Adding the pinging component to a template:
+```angular2html
+<app-ping [pingUrlData]="data" ]></app-ping>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/PDBe-KB/pdbe-kb-ping-component/tags).
+
+## Authors
+
+* **Nurul Nadzirin** - *Initial work* - [nurulnad](https://github.com/nurulnad)
+* **Mihaly Varadi** - *Migrating to GitHub* - [mvaradi](https://github.com/mvaradi)
+
+See also the list of [contributors](https://github.com/PDBe-KB/pdbe-kb-ping-component/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the EMBL-EBI License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgements
+
+We would like to thank the [PDBe team](https://www.pdbe.org) and the [PDBe-KB partner resources](https://github.com/PDBe-KB/pdbe-kb-manual/wiki/PDBe-KB-Annotations) for their feedback and contributions.
