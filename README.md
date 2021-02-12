@@ -1,6 +1,9 @@
 PDBe-KB Ping Component
 =
 
+[![Build Status](https://www.travis-ci.com/PDBe-KB/pdbe-kb-ping-component.svg?branch=main)](https://www.travis-ci.com/PDBe-KB/pdbe-kb-ping-component)
+[![Maintainability](https://api.codeclimate.com/v1/badges/cf98b84b88b21a3e6fb5/maintainability)](https://codeclimate.com/github/PDBe-KB/pdbe-kb-ping-component/maintainability)
+
 This is the repository of a lightweight Angular 7+ web component that makes GET requests to specified URLs. 
 
 This component is used on the PDBe-KB Aggregated Views of Proteins to generate web traffic for PDBe-KB partner resources who have contributed annotations for a particular protein of interest.
