@@ -55,7 +55,7 @@ export class AppModule { }
 
 Adding the pinging component to a template:
 ```angular2html
-<app-ping [pingUrlData]="data" ]></app-ping>
+<app-ping [pingUrlData]=""></app-ping>
 ```
 
 ## Versioning
