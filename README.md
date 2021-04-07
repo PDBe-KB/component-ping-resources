@@ -5,9 +5,9 @@ PDBe-KB Ping Component
 [![codecov](https://codecov.io/gh/PDBe-KB/component-ping-resources/branch/master/graph/badge.svg?token=GLYUFFF6QX)](https://codecov.io/gh/PDBe-KB/component-ping-resources)
 [![Maintainability](https://api.codeclimate.com/v1/badges/cf98b84b88b21a3e6fb5/maintainability)](https://codeclimate.com/github/PDBe-KB/component-ping-resources/maintainability)
 
-This is the repository of a lightweight Angular 7+ web component that makes GET requests to specified URLs. 
+This repository is for the codebase of a lightweight Angular v7 web component that makes GET requests to specified URLs. 
 
-This component is used on the PDBe-KB Aggregated Views of Proteins to generate web traffic for PDBe-KB partner resources who have contributed annotations for a particular protein of interest.
+This web component is used on the PDBe-KB Aggregated Views of Proteins to generate web traffic for PDBe-KB partner resources who have contributed annotations for a particular protein of interest.
 
 ## Quick Start
 
@@ -30,7 +30,7 @@ ng test
 
 ## Dependencies
 
-The main template should also have the following CSS import:
+The main template (i.e. `index.html` by default) should also have the following CSS imports:
 ```angular2html
 <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css" type="text/css" media="all"/>
@@ -39,9 +39,11 @@ The main template should also have the following CSS import:
 
 ## Basic usage
 
-The pinging component can be added to any Angular7+ apps.
+The pinging component can be added to any Angular v6 apps.
 
-Import the component (e.g. in app.module.ts):
+#### 1.) Import the component:
+
+Import the component in `app.module.ts` by default.
 ```
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -63,9 +65,24 @@ import { PingComponent } from './ping/ping.component';
 export class AppModule { }
 ```
 
+#### 2.) Add the component to a template:
 Adding the pinging component to a template:
 ```angular2html
 <app-ping [pingUrlData]=""></app-ping>
+```
+
+The data model for the input data is described in 
+`src/app/ping/ping.models.ts`
+
+##### Example input data
+
+```angular2html
+[
+  {
+    "resourceName": "3Dcomplex",
+    "url": "https://shmoo.weizmann.ac.il/elevy/3dcomplexV6/Home.cgi"
+  }
+]
 ```
 
 ## Versioning
